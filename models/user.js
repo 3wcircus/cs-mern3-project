@@ -21,7 +21,20 @@ const UserSchema = mongoose.Schema({
   signUpDate: {
     type: Date,
     default: Date.now()
-  }
+  },
+  profileImage:{
+    type: String
+  },
+  backgroundImage: {
+    type: String
+  },
+  tweets: [{
+    title : String,
+    img : String,
+    private: Boolean,
+    default: false
+
+  }]
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);

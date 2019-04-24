@@ -33,7 +33,7 @@ class App extends Component {
             return (
                 <Router basename="/react-auth-ui/">
                     <div className="App">
-                        <div className="App__Aside"></div>
+                        <div className="App__Aside">Tweeter</div>
                         <div className="PageSwitcher">
                             <NavLink to="/sign-out" activeClassName="PageSwitcher__Item--Active"
                                      className="PageSwitcher__Item">Sign Out</NavLink>
