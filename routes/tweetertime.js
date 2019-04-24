@@ -23,6 +23,14 @@ router.get('/tweets/search/:searchterm', function (req, res, next) {
     res.render('index.pug', {title: 'Search Tweets'});
 });
 
+
+// Get a specific Tweeter
+router.get('/tweets/:id', function (req, res, next) {
+    res.render('index.pug', {title: 'Search Tweets'});
+});
+
+
+
 // Create a new tweeter
 // TODO: This doesnt need an update right?
 router.post('/tweets', (req, res) => {
