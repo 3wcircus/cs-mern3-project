@@ -106,8 +106,9 @@ router.post('/register',
     ),
     // If the signup strategy is successful, send "User Created!!!"
     function(req, res) {
-        // Send the message in the .send function
-        res.send('User Created!!!');
+       // FIXME: auto-login
+        console.log(`---> ${req}`);
+        res.send(req.user);
     });
 
 // If a new user signup strategy failed, it's redirected to this route
@@ -118,9 +119,7 @@ router.get('/failNewUser', (req, res)=>{
 router.get('/', (req, res)=>{
     res.send('Test User Route');
 });
-//******************************************************************
-// ***************   Check if a user exists    *********************
-//******************************************************************
+
 
 // This is the "strategy" for checking for an existing user. If we don't assign a name to the strategy it defaults to local
 passport.use('login', new LocalStrategy(
@@ -167,9 +166,11 @@ router.post('/login',
         // req.user is the results from the findOne function of local strategy
         req.session.username=req.user.username;
         // Send the username and email back to the client to save to the client's state
+        // res.send(req.user);
         res.send({
             username: req.user.username,
-            email: req.user.email
+            email: req.user.email,
+            name: req.user.name
         });
     });
 

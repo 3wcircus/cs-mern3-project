@@ -31,10 +31,8 @@ const UserSchema = mongoose.Schema({
   tweets: [{
     title : String,
     img : String,
-    private: Boolean,
-    default: false
-
+    private: Boolean
   }]
 });
 
-const User = module.exports = mongoose.model('User', UserSchema);
+const User = module.exports = mongoose.model('TweeterUser"title', UserSchema);
