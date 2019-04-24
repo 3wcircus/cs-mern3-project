@@ -7,7 +7,8 @@ class SignInForm extends Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            goHome: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -60,6 +61,7 @@ class SignInForm extends Component {
                 return this.props.loggedInUserInfo(null, null, false)
         });
         console.log('The form was submitted with the following data:');
+
         console.log(this.state);
     };
 
